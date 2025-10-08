@@ -1,0 +1,404 @@
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, Clock, Eye, MessageSquare, AlertTriangle, Users } from 'lucide-react';
+
+const PresentationOutline = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      number: 1,
+      section: "PRELIMINARES",
+      time: "0:30",
+      title: "Ecosistemas de Aprendizaje Socioemocional Adaptativos con IA para la Prevención de Violencia Escolar",
+      subtitle: "Una Propuesta para la Educación Superior",
+      keyPoints: [
+        "Título completo en español e inglés",
+        "Nombre del autor y afiliación institucional",
+        "Logo del Congreso RedISS 2025",
+        "Contexto: Tercer Congreso RedISS - Políticas de las Sensibilidades y Pobrezas"
+      ],
+      visualContent: "Imagen impactante: Estudiantes universitarios en situación de conflicto/estrés con overlay sutil de elementos digitales (redes neuronales, conexiones). Paleta cálida (naranjas/morados) no fría.",
+      speakerNotes: "SALUDO: 'Buenos días/tardes. Agradezco al comité organizador del Congreso RedISS este espacio.' CONEXIÓN: '¿Cuántos de ustedes han presenciado la escalada de violencia en aulas universitarias?' - Pausa para contacto visual."
+    },
+    {
+      number: 2,
+      section: "EXORDIO (4 min total)",
+      time: "1:00",
+      title: "La Crisis: Un Empobrecimiento de las Sensibilidades Colectivas",
+      keyPoints: [
+        "PREGUNTA PROVOCADORA inicial",
+        "+56% interrupciones de clase (México)",
+        "+48% falta de respeto a autoridades",
+        "92.3% → 20.9% bienestar emocional estudiantil",
+        "Conexión: 'Pobreza emocional' sistémica"
+      ],
+      visualContent: "Gráfico de barras ascendentes dramático (rojo intenso). NO usar más de 3 elementos visuales. Números grandes y legibles (Arial 24-28pt). Máximo 5 renglones de texto.",
+      speakerNotes: "INVOLUCRAR: 'Esta no es solo una crisis educativa, es una crisis de sensibilidades colectivas que afecta el tejido social universitario.' Mantener contacto visual. NO leer las cifras, explicarlas con naturalidad."
+    },
+    {
+      number: 3,
+      section: "EXORDIO",
+      time: "1:30",
+      title: "Introducción: Objetivo y Posición del Investigador",
+      keyPoints: [
+        "OBJETIVO: Proponer ecosistema AI-SEL para prevención de violencia escolar",
+        "PROBLEMA: Desregulación emocional estudiantil en México",
+        "POSICIÓN: IA como amplificadora (no sustituta) de capacidades humanas",
+        "PERSPECTIVA TEÓRICA: Hibridación CASEL + Nueva Escuela Mexicana",
+        "ESTRUCTURA: Metodología → Resultados → Discusión → Conclusiones"
+      ],
+      visualContent: "Diagrama simple de Venn (2 círculos): CASEL Internacional + NEM México = Matriz culturalmente situada. Usar enunciados cortos, NO párrafos.",
+      speakerNotes: "ANUNCIAR estructura claramente: 'En los próximos 12 minutos presentaré la metodología, los componentes innovadores del sistema, una discusión crítica sobre ética, y las implicaciones para la paz social.' Usar marcador discursivo: 'Comenzaré explicando...'"
+    },
+    {
+      number: 4,
+      section: "DESARROLLO (12 min total)",
+      time: "2:00",
+      title: "Metodología: Diseño de la Investigación",
+      keyPoints: [
+        "TIPO DE ESTUDIO: Investigación-Acción Participativa (IAP)",
+        "DISEÑO: Conceptual-pedagógico con arquitectura AI multimodal",
+        "CATEGORÍAS: 5 competencias CASEL × 6 elementos NEM",
+        "TÉCNICAS: Co-construcción con educadores, estudiantes, familias",
+        "ALCANCE: Educación superior mexicana (contexto MCCEMS)"
+      ],
+      visualContent: "Diagrama de flujo circular mostrando actores IAP (iconos de personas: estudiantes, docentes, investigadores, familias) con flechas bidireccionales. Máximo 7 renglones en pantalla.",
+      speakerNotes: "CONECTAR con anterior: 'Para abordar esta crisis, diseñamos una metodología participativa que...' ÉNFASIS: 'No es un proyecto extractivo de datos, sino co-creación con comunidades educativas.' Gesticular para reforzar concepto de colaboración."
+    },
+    {
+      number: 5,
+      section: "DESARROLLO",
+      time: "2:30",
+      title: "Componente Innovador 1: Monitoreo Emocional Multimodal",
+      keyPoints: [
+        "4 MODALIDADES integradas:",
+        "1. Análisis vocal (prosodia, tono)",
+        "2. Análisis textual (sentimiento, patrones)",
+        "3. Observación comportamental no invasiva",
+        "4. Auto-reporte gamificado",
+        "PRECISIÓN diagnóstica: >95%"
+      ],
+      visualContent: "Gráfico de radar (spider chart) con 4 ejes = las 4 modalidades. Centro: silueta de estudiante. Usar colores cálidos. NO sobrecargar con gráficos innecesarios.",
+      speakerNotes: "EXPLICAR beneficio: 'La multimodalidad proporciona redundancia que mitiga errores de clasificación individual y reduce sesgos.' Pausa. CONTRASTAR: 'A diferencia de sistemas que dependen de una sola fuente de datos...'"
+    },
+    {
+      number: 6,
+      section: "DESARROLLO",
+      time: "2:30",
+      title: "Componente Innovador 2: Motor Predictivo de IA",
+      keyPoints: [
+        "CAPACIDAD: Identificación de patrones pre-conflicto",
+        "ANTICIPACIÓN: 48-72 horas previas",
+        "PRECISIÓN: 92-93% (comparable a contextos clínicos)",
+        "TRANSFORMACIÓN paradigmática:",
+        "Respuesta REACTIVA → Prevención PROACTIVA"
+      ],
+      visualContent: "Línea de tiempo horizontal clara: [T-72h] Patrón detectado → [T-48h] Alerta generada → [T-24h] Intervención docente → [T-0] Conflicto PREVENIDO. Usar iconos simples.",
+      speakerNotes: "ENFATIZAR innovación: 'Esta es la contribución más significativa desde la perspectiva pedagógica: creamos ventanas de intervención preventiva sin precedentes.' Usar lenguaje corporal para marcar los tiempos en la línea temporal."
+    },
+    {
+      number: 7,
+      section: "DESARROLLO",
+      time: "2:00",
+      title: "Componentes de Apoyo: Dashboard Docente y Currículo Adaptativo",
+      keyPoints: [
+        "DASHBOARD: Visualización en tiempo real del estado socioemocional áulico",
+        "Alertas de intervención + Recomendaciones pedagógicas",
+        "CURRÍCULO ADAPTATIVO: Personalización según perfil emocional",
+        "Mindfulness, autorregulación, simulaciones de conflicto",
+        "Autoridad final: SIEMPRE del docente"
+      ],
+      visualContent: "Mockup simplificado de interfaz dashboard (NO realista, esquemático): mapa de calor del aula + panel de alertas. Diseño minimalista, máximo 3 elementos visuales.",
+      speakerNotes: "ACLARAR rol humano: 'Es crucial entender que la IA sugiere, pero el educador decide. La tecnología amplifica, no reemplaza el juicio pedagógico.' Mantener contacto visual al decir esto."
+    },
+    {
+      number: 8,
+      section: "DESARROLLO - Discusión",
+      time: "2:00",
+      title: "Discusión Crítica: Tensiones Éticas del Sistema",
+      keyPoints: [
+        "DESAFÍO 1: Privacidad - ¿Mercantilización de datos emocionales?",
+        "DESAFÍO 2: Sesgos algorítmicos en estudiantes latinos/afro",
+        "DESAFÍO 3: Riesgo de dependencia cognitiva",
+        "SALVAGUARDAS: Encriptación militar + Auditorías continuas",
+        "PRINCIPIO RECTOR: Juicio humano como elemento FUNDAMENTAL"
+      ],
+      visualContent: "Imagen dividida verticalmente: Izquierda (RIESGOS - iconos de advertencia en naranja), Derecha (SALVAGUARDAS - iconos de protección en verde). Balance visual 50/50.",
+      speakerNotes: "CONEXIÓN con RedISS: 'Esta es nuestra crítica a la utopía tecnológica ingenua. Reconocemos que la vigilancia emocional puede convertirse en un instrumento de control si no se diseña éticamente.' Tono reflexivo y crítico."
+    },
+    {
+      number: 9,
+      section: "EPÍLOGO (4 min total)",
+      time: "1:30",
+      title: "Resultados Esperados e Implicaciones para la Paz Social",
+      keyPoints: [
+        "Reducción significativa de incidentes disciplinarios",
+        "Mejora en clima áulico y bienestar estudiantil",
+        "RETORNO ECONÓMICO: $11 por cada $1 invertido (basado en programas SEL)",
+        "VISIÓN UTÓPICA: IA amplificando empatía humana",
+        "Contribución a construcción de sociedades más justas"
+      ],
+      visualContent: "Gráfico de impacto multinivel (pirámide o escalera ascendente): Individual → Áulico → Institucional → Sistémico (Paz Social). Flechas hacia arriba. Colores cálidos progresivos.",
+      speakerNotes: "CONECTAR con utopías del congreso: 'Creemos que la prevención social de la violencia ES posible. Este ecosistema representa una respuesta sistémica que va más allá de intervenciones puntuales.' Proyectar esperanza sin ingenuidad."
+    },
+    {
+      number: 10,
+      section: "EPÍLOGO - Conclusiones",
+      time: "1:30",
+      title: "Conclusiones",
+      keyPoints: [
+        "Párrafo introductorio breve, luego numeradas:",
+        "1. Hibridación CASEL-NEM: modelo replicable culturalmente situado",
+        "2. Diseño multimodal: avance metodológico en evaluación SEL",
+        "3. Capacidad predictiva: transformación del paradigma educativo",
+        "4. Imperativo ético: mantener centralidad del desarrollo humano",
+        "5. LIMITACIÓN: Requiere validación empírica extensa"
+      ],
+      visualContent: "Lista numerada clara (1-5) con iconos por conclusión. Fuente Arial 22-24pt. NO usar más de 7 renglones. Destacar visualmente la limitación (#5) en color diferente.",
+      speakerNotes: "Comenzar: 'En síntesis, esta propuesta realiza tres contribuciones fundamentales...' Luego enumerar con claridad. SER HONESTO sobre limitaciones: 'Es importante reconocer que esto es un diseño conceptual que requiere validación rigurosa antes de implementación a escala.'"
+    },
+    {
+      number: 11,
+      section: "EPÍLOGO - Cierre",
+      time: "0:30",
+      title: "Reflexión Final: Entre la Crítica y la Utopía",
+      keyPoints: [
+        "REFLEXIÓN vinculada con el inicio:",
+        "¿Cómo co-construimos tecnologías que sirvan a la paz social sin sacrificar autonomía humana?",
+        "La IA debe amplificar lo mejor de nuestra humanidad: empatía, comprensión, conexión",
+        "Ventana de oportunidad histórica en México"
+      ],
+      visualContent: "Imagen potente: Manos humanas y elementos digitales entrelazados (colaboración humano-IA). Foto humanizada, NO fría. Incluir pregunta reflexiva en pantalla.",
+      speakerNotes: "FINALIZAR con reflexión: 'Quisiera dejarles con la pregunta que motiva este trabajo...' (leer la pregunta). Pausa. 'La respuesta no está solo en la tecnología, sino en cómo decidamos utilizarla.' Tono esperanzador pero realista."
+    },
+    {
+      number: 12,
+      section: "EPÍLOGO - Agradecimientos",
+      time: "0:30",
+      title: "Continuemos la Conversación",
+      keyPoints: [
+        "AGRADECIMIENTOS:",
+        "• Al comité organizador del Congreso RedISS",
+        "• A los asistentes por su atención y diálogo",
+        "CONTACTO: [email institucional]",
+        "ACCESO AL ARTÍCULO COMPLETO: [Código QR]",
+        "¿Preguntas o comentarios?"
+      ],
+      visualContent: "Diseño limpio con código QR prominente al centro. Info de contacto clara (Arial 20pt). Imagen de fondo sutil (no distractora). Logo institucional pequeño en esquina.",
+      speakerNotes: "NO decir solo 'Gracias'. Decir: 'Agradezco profundamente al comité organizador de RedISS y a ustedes por su atención. Quedo a disposición para preguntas, comentarios o críticas que enriquezcan esta propuesta.' Sonreír. Mantener postura abierta."
+    }
+  ];
+
+  const nextSlide = () => {
+    if (currentSlide < slides.length - 1) setCurrentSlide(currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) setCurrentSlide(currentSlide - 1);
+  };
+
+  const current = slides[currentSlide];
+
+  // Calculate section timing
+  const getSectionTime = (section) => {
+    const sectionSlides = slides.filter(s => s.section.includes(section));
+    return sectionSlides.reduce((total, slide) => {
+      const [min, sec] = slide.time.split(':').map(Number);
+      return total + min + (sec / 60);
+    }, 0).toFixed(1);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-purple-900 to-slate-900 p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-6 border border-white/20">
+          <h1 className="text-3xl font-bold text-white mb-2">
+            Presentación Académica - Congreso RedISS 2025
+          </h1>
+          <p className="text-orange-200 text-lg mb-3">
+            Ecosistemas AI-SEL para Prevención de Violencia Escolar
+          </p>
+          <div className="grid grid-cols-3 gap-4 text-sm">
+            <div className="bg-orange-500/20 p-3 rounded-lg">
+              <div className="text-orange-200 font-semibold">EXORDIO</div>
+              <div className="text-white text-lg">{getSectionTime('EXORDIO')} min</div>
+            </div>
+            <div className="bg-purple-500/20 p-3 rounded-lg">
+              <div className="text-purple-200 font-semibold">DESARROLLO</div>
+              <div className="text-white text-lg">{getSectionTime('DESARROLLO')} min</div>
+            </div>
+            <div className="bg-blue-500/20 p-3 rounded-lg">
+              <div className="text-blue-200 font-semibold">EPÍLOGO</div>
+              <div className="text-white text-lg">{getSectionTime('EPÍLOGO')} min</div>
+            </div>
+          </div>
+          <div className="mt-3 text-white/80 text-sm flex items-center gap-2">
+            <Users className="w-4 h-4" />
+            <span>Duración total: ~12 minutos | 12 diapositivas | Estructura IMRDC</span>
+          </div>
+        </div>
+
+        {/* Main Slide Display */}
+        <div className="bg-white rounded-xl shadow-2xl p-8 mb-6">
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex items-center gap-4 flex-1">
+              <div className="bg-gradient-to-br from-orange-600 to-purple-600 text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-xl shadow-lg">
+                {current.number}
+              </div>
+              <div className="flex-1">
+                <div className="text-sm font-semibold text-orange-600 mb-1">
+                  {current.section}
+                </div>
+                <h2 className="text-2xl font-bold text-gray-800 leading-tight">
+                  {current.title}
+                </h2>
+                {current.subtitle && (
+                  <p className="text-lg text-gray-600 mt-1">{current.subtitle}</p>
+                )}
+                <div className="flex items-center gap-2 mt-2">
+                  <Clock className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-semibold text-purple-600">
+                    {current.time} minutos
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {/* Key Points */}
+            <div className="bg-gradient-to-r from-orange-50 to-purple-50 border-l-4 border-orange-600 p-5 rounded-lg">
+              <div className="flex items-start gap-3">
+                <Eye className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-800 mb-3 text-lg">
+                    Contenido en Pantalla (Enunciados Clave)
+                  </h3>
+                  <ul className="space-y-2">
+                    {current.keyPoints.map((point, idx) => (
+                      <li key={idx} className="text-gray-700 leading-relaxed flex items-start gap-2">
+                        <span className="text-orange-600 font-bold mt-1">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Content Guidelines */}
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-600 p-5 rounded-lg">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-800 mb-3 text-lg">
+                    Diseño Visual (Seguir Pautas Sánchez Upegui)
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {current.visualContent}
+                  </p>
+                  <div className="mt-3 p-3 bg-blue-100 rounded text-sm text-blue-800">
+                    <strong>Recordatorio:</strong> Arial 20-25pt | Máx. 7 renglones | 
+                    Contraste alto | Diseño sencillo y preciso
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Speaker Notes */}
+            <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-600 p-5 rounded-lg">
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-6 h-6 text-amber-600 mt-1 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-800 mb-3 text-lg">
+                    Guion del Ponente (Hablar con Naturalidad - NO Leer)
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                    {current.speakerNotes}
+                  </p>
+                  <div className="mt-3 p-3 bg-amber-100 rounded text-sm text-amber-800">
+                    <strong>Técnica:</strong> Contacto visual constante | Lenguaje corporal 
+                    refuerza mensaje | Marcadores discursivos para cohesión
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex items-center justify-between mb-6">
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className="flex items-center gap-2 px-6 py-3 bg-white rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-all font-semibold"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            Anterior
+          </button>
+
+          <div className="flex gap-2">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-3 rounded-full transition-all ${
+                  idx === currentSlide
+                    ? 'bg-orange-500 w-8'
+                    : 'bg-white/50 hover:bg-white/80 w-3'
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-purple-600 text-white rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-orange-700 hover:to-purple-700 transition-all font-semibold"
+          >
+            Siguiente
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Structure Overview */}
+        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+          <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <Clock className="w-5 h-5" />
+            Cronograma de Presentación (Estructura Académica)
+          </h3>
+          <div className="grid grid-cols-12 gap-2">
+            {slides.map((slide, idx) => {
+              let bgColor = 'bg-orange-500/30';
+              if (slide.section.includes('DESARROLLO')) bgColor = 'bg-purple-500/30';
+              if (slide.section.includes('EPÍLOGO')) bgColor = 'bg-blue-500/30';
+              
+              return (
+                <div
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`p-3 rounded-lg cursor-pointer transition-all ${
+                    idx === currentSlide
+                      ? 'bg-white text-gray-900 scale-105 shadow-lg'
+                      : `${bgColor} text-white/80 hover:bg-white/20`
+                  }`}
+                >
+                  <div className="text-xs font-bold mb-1">#{slide.number}</div>
+                  <div className="text-xs font-semibold">{slide.time}</div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-4 text-sm text-white/70 bg-white/5 p-4 rounded-lg">
+            <strong>Estructura IMRDC:</strong> Introducción (slides 2-3) → Metodología (slide 4) → 
+            Resultados (slides 5-7) → Discusión (slide 8) → Conclusiones (slides 9-10) → 
+            Cierre (slides 11-12)
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PresentationOutline;
